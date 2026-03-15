@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>Today's Study Schedule</h2>
+
+<ul>
+
+{% for item in schedule %}
+
+<li>
+
+{{item.start}}:00 - {{item.end}}:00 → {{item.task}}
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}
