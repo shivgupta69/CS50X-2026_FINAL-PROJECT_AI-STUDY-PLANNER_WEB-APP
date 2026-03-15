@@ -1,4 +1,4 @@
-AI Study Planner
+AI Study Planner (under development)
 
 Overview
 
