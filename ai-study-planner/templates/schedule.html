@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>Today's Study Schedule</h2>
+
+{% if schedule %}
+<ul>
+    {% for item in schedule %}
+    <li>{{ item.start }}:00 - {{ item.end }}:00 → {{ item.task }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No tasks found. Add some tasks from the <a href="/">Dashboard</a> first!</p>
+{% endif %}
+
+{% endblock %}

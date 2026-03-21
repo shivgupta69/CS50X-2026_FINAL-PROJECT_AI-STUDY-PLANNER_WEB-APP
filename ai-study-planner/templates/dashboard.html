@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>📚 Study Dashboard</h2>
+
+<hr>
+
+<h3>Add New Study Task</h3>
+
+<form action="/add" method="post">
+    <input type="text" name="task" placeholder="Task Name" required>
+    <input type="text" name="category" placeholder="Category (DSA / AI / Revision)" required>
+    <input type="number" name="duration" placeholder="Hours" min="1" step="1" required>
+    <button type="submit">Add Task</button>
+</form>
+
+<hr>
+
+<h3>Your Study Tasks</h3>
+
+{% if tasks %}
+<ul>
+    {% for task in tasks %}
+    <li>
+        <strong>{{ task[2] }}</strong> - {{ task[3] }} - {{ task[4] }} hours
+        <a href="/delete/{{ task[0] }}">❌ Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No tasks yet. Add one above!</p>
+{% endif %}
+
+<hr>
+
+<h3>Study Analytics</h3>
+
+{% if labels %}
+<canvas id="studyChart" height="100"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const labels = {{ labels|tojson }};
+const values = {{ data|tojson }};
+
+const ctx = document.getElementById("studyChart");
+
+new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Study Hours",
+            data: values
+        }]
+    }
+});
+</script>
+{% else %}
+<p>No data to display yet. Add some tasks to see your analytics!</p>
+{% endif %}
+
+{% endblock %}
