@@ -1,8 +1,8 @@
-AI Study Planner (under development)
+Study Planner (under development)
 
 Overview
 
-AI Study Planner is a web-based productivity application designed to help students organize their study tasks and generate structured study schedules. The application allows users to register, log in, add study tasks, and automatically create a study plan based on the tasks they provide. In addition, the application provides study analytics that visualize how much time the user spends on different study categories.
+Study Planner is a web-based productivity application designed to help students organize their study tasks and generate structured study schedules. The application allows users to register, log in, add study tasks, and automatically create a study plan based on the tasks they provide. In addition, the application provides study analytics that visualize how much time the user spends on different study categories.
 
 The primary goal of this project is to help students manage their study time efficiently by providing a simple task management system combined with automated scheduling and data visualization. By organizing tasks and displaying study patterns, the application helps users stay productive and track their learning progress.
 
